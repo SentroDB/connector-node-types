@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "target": "ES2020",
+        "module": "CommonJS",
+        "moduleResolution": "Node",
+        "allowSyntheticDefaultImports": true, // ✅ helpful in consumers
+        "esModuleInterop": true,
+        "declaration": true,
+        "declarationMap": true,
+        "inlineSourceMap": true,
+        "noImplicitOverride": true,
+        "stripInternal": true,
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "strict": true,
+        "skipLibCheck": true
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}

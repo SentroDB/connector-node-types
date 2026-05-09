@@ -1,0 +1,17 @@
+{
+  "name": "@sentrodb/connector-node-types",
+  "version": "1.0.0",
+  "description": "SentroDB Connector Types for Node",
+  "main": "dist/index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "Ahmad Alyousef <ahmad-alyousef@hotmail.com>",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "@types/node": "^22.15.17",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {}
+}
