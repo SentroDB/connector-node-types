@@ -29,6 +29,16 @@ export interface Column {
     isGenerated: boolean;
     generatedType: ColumnGeneratedType;
     enum_values: string[];
+    /**
+     * True for synthetic array-valued columns that represent a many-to-many
+     * relation (Prisma implicit M2M). Backed by a hidden junction table; the
+     * column has no underlying SQL column on the parent table.
+     */
+    isMany?: boolean;
+    /** Target table + column the relation points at (PK of the related model) */
+    references?: { table: string; column: string };
+    /** Hidden junction table coordinates — present when isMany is true */
+    junction?: { table: string; sourceColumn: string; targetColumn: string };
 }
 
 export interface Constraint {
@@ -43,6 +53,16 @@ export interface Constraint {
     onDelete: string | null;
     relationshipType: RelationshipType;
     isUnique: boolean;
+    /**
+     * Present on synthetic many-to-many constraints (Prisma implicit M2M
+     * junction tables that the parser folds away). Tells the connector how to
+     * fan writes/reads through the hidden junction. Absent for ordinary FKs.
+     */
+    junction?: {
+        table: string;
+        sourceColumn: string;
+        targetColumn: string;
+    };
 }
 
 export interface Index {
