@@ -6,6 +6,7 @@ export interface DBConfig {
     database: string;
     schema?: string;
     type: "postgres" | "mysql" | "mssql";
+    ssl?: boolean
 }
 
 export interface Table {
