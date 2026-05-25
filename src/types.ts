@@ -9,6 +9,13 @@ export interface DBConfig {
     ssl?: boolean
 }
 
+type UploadedFile = {
+    filename: string;
+    size: number;
+    type: string;
+    buffer: string;
+};
+
 export interface Table {
     name: string;
     customization: CustomTable;
