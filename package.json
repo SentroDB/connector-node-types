@@ -1,6 +1,6 @@
 {
   "name": "@sentrodb/connector-node-types",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "SentroDB Connector Types for Node",
   "main": "dist/index.js",
   "types": "index.d.ts",
